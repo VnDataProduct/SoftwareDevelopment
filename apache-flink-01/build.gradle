@@ -12,6 +12,9 @@ jar {
     manifest {
         attributes 'Main-Class': 'org.vndataproduct.apacheflink001.ClickEventCount'
     }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
 
 repositories {
