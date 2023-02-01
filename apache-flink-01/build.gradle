@@ -9,6 +9,7 @@ compileJava   {
 }
 
 jar {
+    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
     manifest {
         attributes 'Main-Class': 'org.vndataproduct.apacheflink001.ClickEventCount'
     }
@@ -28,7 +29,7 @@ ext {
 
 dependencies {
 
-    compileOnly "org.apache.flink:flink-java:${flinkVersion}"
-    compileOnly "org.apache.flink:flink-streaming-java:${flinkVersion}"
+    implementation "org.apache.flink:flink-java:${flinkVersion}"
+    implementation "org.apache.flink:flink-streaming-java:${flinkVersion}"
     implementation "org.apache.flink:flink-connector-kafka:${flinkVersion}"
 }

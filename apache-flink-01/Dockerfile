@@ -3,7 +3,7 @@
 # Build Click Count Job
 ###############################################################################
 # Get Click Count job and compile it
-FROM gradle:latest AS builder
+FROM gradle:7.0-jdk11 AS builder
 WORKDIR /opt/flink-playground-clickcountjob
 COPY . .
 RUN gradle build

@@ -33,6 +33,7 @@ services:
     image: apache/flink-ops-playground:1-FLINK-1.16-scala_2.12
     command: "java -classpath /opt/ClickCountJob.jar:/opt/flink/lib/* org.vndataproduct.apacheflink001.ClickEventGenerator --bootstrap.servers kafka:9092 --topic input"
     depends_on:
+      - client
       - kafka
   jobmanager:
     image: apache/flink:1.16.0-scala_2.12-java11
